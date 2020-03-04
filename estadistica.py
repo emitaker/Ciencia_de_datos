@@ -32,4 +32,5 @@ def main():
     print(mediana(a))
     print(moda(a))
 
+
 main()
