@@ -8,10 +8,28 @@ autores = {'nombre': nombres, 'libro': novelas, 'muerte' : año, 'género': gene
 
 pd_autores = pd.DataFrame(autores)
 
-print(pd_autores)
+print(pd_autores,"\n")
 
 pd_autores.index= ['EAP' , 'HPL', 'GM','CRZ','SK','IA','HdQ','ACC','JRR','PKD']
-print(pd_autores)
+print(pd_autores,"\n")
+
+z=pd_autores.loc[['EAP','JRR','PKD'],['libro','género']]
+print(z,"\n")
+
+a=pd_autores.loc[:,['nombre','género']]
+print(a,"\n")
+
+b=pd_autores.iloc[[5,3],[3,0]]
+print(b,"\n")
+
+c=pd_autores.iloc[[5,3]]
+print(c,"\n")
+
+d=pd_autores.iloc[:,[1]]
+print(d,"\n")
+
+e=pd_autores.iloc[0:8:2,[1]]
+print(e,"\n")
 
 # a partir de aqui poner en la terminal esto
 type(pd_autores)
