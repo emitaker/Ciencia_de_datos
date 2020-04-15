@@ -1,4 +1,4 @@
-import matplotlib.pyplot as plt 
+import matplotlib.pyplot as plt
 
 x=[1,2,3,4,5]
 y=[10,20,30,40,50]
@@ -53,7 +53,11 @@ plt.scatter(x,np_y,alpha=.4,s=20,c="black")
 x=range(10)
 y=[16,1,32,64,128,4,2,256,8,512]
 tamaño=[100,200,30,40,1200,60,70,800,90,100]
+<<<<<<< HEAD
 color=["red","red","blue","black","yellow","yellow","green","green"]
+=======
+color=["red","red","blue","black","yellow","yellow","green","green","black","yellow"]
+>>>>>>> bfade7fda694b199fa83b15bfac5a4f70b6eaaf9
 plt.scatter(x,y,s=tamaño,c=color,alpha= 0.6)
 plt.text(4,128,"punto 5")
 plt.text(7,256,"punto 7")
@@ -69,4 +73,3 @@ for i in np_x:
 plt.plot(np_x,y,c="black")
 plt.grid(True)
 plt.show()
-
