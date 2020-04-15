@@ -54,7 +54,7 @@ x=range(10)
 y=[16,1,32,64,128,4,2,256,8,512]
 tamaño=[100,200,30,40,1200,60,70,800,90,100]
 color=["red","red","blue","black","yellow","yellow","green","green"]
-plt.scatter(x,y,s=tamaño,c=color,alpha= 0.6
+plt.scatter(x,y,s=tamaño,c=color,alpha= 0.6)
 plt.text(4,128,"punto 5")
 plt.text(7,256,"punto 7")
 plt.show()
