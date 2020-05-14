@@ -27,25 +27,28 @@ def kmin(k,lista):
     return lista[0:k]
 
 def kNN(k,listaPuntos,punto):#lista de puntos coloreados=listaPuntos , punto sin color = punto
-    if k>=1:
-        x=putInd(listaPuntos)
-
-        #usar dist
-        #usar getCoor
-        pass
-
-
-#prueba 1
-rd.seed(777)
-puntos = []
-for k in range(50):
-    puntos.append([rd.randint(1,100), rd.randint(1,100), rd.randint(1,100), rd.choice(['amarillo','azul', 'rojo'])])
-
-#prueba 2
-rd.seed(777)
-puntos = []
-for k in range(500):
-    puntos.append([rd.randint(1,100), rd.randint(1,100), rd.randint(1,100), rd.choice(['amarillo','azul', 'rojo'])])
+    e=[]
+    for i in listaPuntos:
+        f = getCoor(i)
+        e.append(f)
+    g = []
+    for i in e:
+        di = dist(i,punto)
+        g.append(di)
+    posiciones = putInd(g)
+    pos=[]
+    for i in range(len(posiciones)):
+        h=posiciones[i][0]
+        pos.append(h)
+        
+    kk = Kmin(k,e)
+    indices = []
+    for i in range(len(kk)):
+        ind = pos.index(kk[i])
+        indices.append(ind)
+    colores = getNearColors(listaPuntos,indices)
+    color=mode(colores)
+    return color
 
 
 def main():
@@ -55,5 +58,18 @@ def main():
     print('ejercicio 4','\n',getNearColors([[1,2,3,'rojo'],[4,5,6,'azul'],[7,8,9,'amarillo']],[0,2]),'\n')
     print('ejercicio 5','\n',kmin(3,[4,5,2,7,1,9]),'\n')
     print('ejercicio 5','\n',kmin(5,[[2,3],[1,3],[5,8],[7,6],[0,4],[7,2],[9,5],[1,2],[4,6]]),'\n')
-    #print('ejercicio 6','\n',kNN(1,2,3))
+    rd.seed(777)
+    puntos = []
+    for k in range(50):
+        puntos.append([rd.randint(1,100), rd.randint(1,100), rd.randint(1,100), rd.choice(['amarillo','azul', 'rojo'])])
+    print('ejercicio 6','\n',kNN(5,puntos,[20,30,40]),'\n')
+    print('ejercicio 6','\n',kNN(5,puntos,[11,53,89]),'\n')
+    print('ejercicio 6','\n',kNN(5,puntos,[97,11,54]),'\n')
+    rd.seed(777)
+    puntos = []
+    for k in range(500):
+        puntos.append([rd.randint(1,100), rd.randint(1,100), rd.randint(1,100), rd.choice(['amarillo','azul', 'rojo'])])
+    print('ejercicio 6','\n',kNN(5,puntos,[11,80,77]),'\n')
+
+
 main()
