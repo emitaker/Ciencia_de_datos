@@ -156,7 +156,7 @@ def main():
     # print(recomendar(3, baseP_p_df)),ratings = [5, 0, 0, 0, 4, 2]
     # print(recomendar(5, baseP_p_df)),ratings = [0, 3, 4, 4, 0, 0]
     # print(recomendar(7, baseP_p_df)), ratings =[4, 5, 5, 0, 5, 0]
-    
+        
     
     
     
