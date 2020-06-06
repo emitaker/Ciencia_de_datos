@@ -124,7 +124,6 @@ def recomendar(k,base):
     
     lastDataFrame = dataFrameNV.iloc[x]
     recomendation = maxPun(lastDataFrame)
-    print(lastDataFrame)
     return 'La pelilcula que mas te recomiendo ver es la de: {0}'.format(recomendation)
 
 
@@ -163,9 +162,14 @@ def main():
     
     # insertar aqui la base de datos 
     
+    #Asegurarse de que la base de datos solo tenga la informacion que necesitamos analizar
+    #Si contiene al mas asegurarse de borrar lo que no se utiliza
     
     
-    # base_de_datos = netflix_database=pd.read_csv(".csv") #agregar el nombre del archivo
-    # recomendar(,base_de_datos) # agregar k
+    base_de_datos = pd.read_csv("Ciencia Ficción.csv") #agregar el nombre del archivo
+    a = base_de_datos.drop('Estudiante', axis = 1)
+    b = a.drop('Ciencia Ficción', axis = 1)
+    # a y b borran columnas que no se utilizan para el analisis
+    print(recomendar(2,b)) # agregar k
 
 main()
